@@ -1924,9 +1924,68 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      recipes: [],
+      pagination: {},
+      loading: true,
+      errored: false
+    };
+  },
+  methods: {
+    getRecipes: function getRecipes(api_url) {
+      var _this = this;
+
+      axios.get(api_url).then(function (response) {
+        _this.recipes = response.data.data;
+
+        _this.paginator(response.data.meta, response.data.links);
+      })["catch"](function (error) {
+        console.log(error);
+        _this.errored = true;
+      })["finally"](function () {
+        return _this.loading = false;
+      });
+    },
+    paginator: function paginator(meta, links) {
+      this.pagination = {
+        current_page: meta.current_page,
+        last_page: meta.last_page,
+        next_page_url: links.next,
+        prev_page_url: links.prev
+      };
+    }
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    this.getRecipes("/api/recipes");
   }
 });
 
@@ -37576,30 +37635,147 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container-fluid" }, [
+    _c(
+      "div",
+      { staticClass: "row" },
+      _vm._l(_vm.recipes, function(recipe) {
+        return _c("div", { key: recipe.id, staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "card mb-4" }, [
+            _c("img", {
+              staticClass: "card-img",
+              attrs: {
+                src: "https://picsum.photos/600/300/?image=25",
+                alt: "Bologna"
+              }
+            }),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" }, [
+              _c("h4", { staticClass: "card-title" }, [
+                _vm._v("Pasta with Prosciutto")
+              ]),
+              _vm._v(" "),
+              _vm._m(0, true),
+              _vm._v(" "),
+              _c("p", { staticClass: "card-text" }, [
+                _vm._v(
+                  "I love quick, simple pasta dishes, and this is one of my favorite."
+                )
+              ]),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-info text-white",
+                  attrs: { href: "/recipe/" + recipe.id }
+                },
+                [_vm._v("Read Recipe")]
+              )
+            ]),
+            _vm._v(" "),
+            _vm._m(1, true)
+          ])
+        ])
+      }),
+      0
+    ),
+    _vm._v(" "),
+    _c("nav", [
+      _c("ul", { staticClass: "pagination justify-content-center" }, [
+        _c(
+          "li",
+          {
+            staticClass: "page-item",
+            class: [{ disabled: !_vm.pagination.prev_page_url }]
+          },
+          [
+            _c(
+              "a",
+              {
+                staticClass: "page-link",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.getRecipes(_vm.pagination.prev_page_url)
+                  }
+                }
+              },
+              [_vm._v("Previous")]
+            )
+          ]
+        ),
+        _vm._v(" "),
+        _c("li", { staticClass: "page-item disabled" }, [
+          _c("a", { staticClass: "page-link", attrs: { href: "#" } }, [
+            _vm._v(
+              _vm._s(_vm.pagination.current_page) +
+                " of " +
+                _vm._s(_vm.pagination.last_page)
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "li",
+          {
+            staticClass: "page-item",
+            class: [{ disabled: !_vm.pagination.next_page_url }]
+          },
+          [
+            _c(
+              "a",
+              {
+                staticClass: "page-link",
+                attrs: { href: "#" },
+                on: {
+                  click: function($event) {
+                    return _vm.getRecipes(_vm.pagination.next_page_url)
+                  }
+                }
+              },
+              [_vm._v("Next")]
+            )
+          ]
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Example Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" }, [
-              _vm._v(
-                "\n                    I'm an example component.\n                "
-              )
-            ])
-          ])
-        ])
-      ])
+    return _c("small", { staticClass: "text-muted cat" }, [
+      _c("i", { staticClass: "far fa-clock text-info" }),
+      _vm._v(" 30 minutes\n            "),
+      _c("i", { staticClass: "fas fa-users text-info" }),
+      _vm._v(" 4 portions\n            "),
+      _c("i", { staticClass: "fas fa-users text-info" }),
+      _vm._v(" 567\n          ")
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass:
+          "card-footer text-muted d-flex justify-content-between border-top-0"
+      },
+      [
+        _c("div", { staticClass: "views" }, [_vm._v("Oct 20, 12:45PM")]),
+        _vm._v(" "),
+        _c("div", { staticClass: "stats" }, [
+          _c("i", { staticClass: "far fa-eye" }),
+          _vm._v(" 1347\n            "),
+          _c("i", { staticClass: "far fa-comment" }),
+          _vm._v(" 12\n          ")
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
