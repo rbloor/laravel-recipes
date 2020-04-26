@@ -9,7 +9,8 @@ $factory->define(Recipe::class, function (Faker $faker) {
     return [
         'title' => $faker->text(40),
         'description' => $faker->text(200),
-        'image' => 'recipe_'.$faker->numberBetween(1, 9).'.jpg',
+        'cooking_time' => $faker->numberBetween(10, 30),
+        'image' => $faker->numberBetween(1, 9),
         'calories' => $faker->numberBetween(0, 1000),
         'protein' => $faker->randomFloat(2, 0, 100),
         'carbs' => $faker->randomFloat(2, 0, 100),

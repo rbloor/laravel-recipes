@@ -11,7 +11,7 @@ class RecipesTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Recipe::class, 10)->create()->each(function($recipe) {
+        factory(App\Recipe::class, 100)->create()->each(function($recipe) {
             $recipe->categories()->attach(
                 Arr::random(App\Category::pluck('id')->toArray(), 2)
             );

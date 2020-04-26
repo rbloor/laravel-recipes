@@ -3,7 +3,7 @@
     <div class="uk-container uk-container-expand">
         <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle" data-uk-grid>
             <div class="uk-width-auto">
-                <a href="#" class="uk-logo" title=""><img src="img/logo.svg" alt=""></a>
+                <a href="/" class="uk-logo" title=""><img src="img/logo.svg" alt=""></a>
             </div>
             <div class="uk-width-expand">
                 <form id="search-form" action="">
@@ -16,14 +16,14 @@
             </div>
             <div class="uk-width-auto">
                 <ul class="uk-subnav" data-uk-margin>
-                    <li class="uk-visible@s"><a href="#">Home</a></li>
-                    <li class="uk-visible@s"><a href="#">About Us</a></li>
+                    <li class="uk-visible@s"><a href="/recipe">Recipe Book</a></li>
+                    <li class="uk-visible@s"><a href="/">Surprise me!</a></li>
                     <li class="uk-visible@s">
-                        <a href="#" data-uk-icon="icon:comments"></a>
+                        <a href="#" data-uk-icon="icon:calendar"></a>
                         <div class="drop-nav drop-comments uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
                             <ul class="uk-child-width-expand" data-uk-tab="animation: uk-animation-fade">
-                                <li><a href="#">Your Messages</a></li>
-                                <li><a href="#">Activity</a></li>
+                                <li><a href="#">This week</a></li>
+                                <li><a href="#">Next week</a></li>
                             </ul>
                             <ul class="uk-switcher uk-margin">
                                 <li class="uk-height-small uk-overflow-auto">
@@ -49,7 +49,7 @@
                         </div>
                     </li>
                     <li class="uk-visible@s">
-                        <a href="#" data-uk-icon="icon:more"></a>
+                        <a href="#" data-uk-icon="icon:user"></a>
                         <div class="drop-nav uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">
                             <h4 class="uk-margin-small-bottom uk-margin-remove-adjacent">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h4>
                             <p class="uk-text-small uk-text-muted">Excepteur sint occaecat cupidatat non

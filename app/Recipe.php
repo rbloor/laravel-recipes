@@ -12,7 +12,7 @@ class Recipe extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'calories', 'protein', 'carbs', 'fat', 'image'
+        'title', 'description', 'cooking_time', 'calories', 'protein', 'carbs', 'fat', 'image'
     ];
 
     public function steps()

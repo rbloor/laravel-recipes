@@ -31,6 +31,7 @@
     position: relative;
     transition: box-shadow 0.15s ease-out;
     border-radius: 3px;
+    border-top-color: #1e87f0;
 }
 .uk-card:hover {
     box-shadow: 0 0 0 7px rgba(0, 0, 0, 0.045);
@@ -49,13 +50,14 @@
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 0.01em;
+    color: #1e87f0;
 }
-.nature-card .uk-card {
-    border-top-color: #1e87f0;
-}
+
 .uk-subnav li a {
     border-radius: 3px;
 }
+
+/*
 .uk-subnav li.uk-active:nth-child(3) a {
     background-color: #8630f0;
 }
@@ -64,6 +66,10 @@
 }
 .uk-subnav li.uk-active:nth-child(5) a {
     background-color: #e84df0;
+}
+
+.nature-card .uk-card {
+    border-top-color: #1e87f0;
 }
 .nature-card .uk-card .cat-txt {
     color: #1e87f0;
@@ -86,6 +92,8 @@
 .photo-card .uk-card .cat-txt {
     color: #f03a7f;
 }
+*/
+
 .uk-card .uk-overlay-primary {
     padding: 0.5rem;
     text-align: center;

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recipe;
+use App\Category;
 
 class RecipeController extends Controller
 {
@@ -13,7 +15,10 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        return view('recipe.index');
+        $recipes = Recipe::all();
+        $categories = Category::all();
+        
+        return view('recipe.index', compact('recipes', 'categories'));
     }
 
     /**

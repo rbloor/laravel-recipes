@@ -17,6 +17,7 @@ class CreateRecipesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->text('description')->nullable();
+            $table->integer('cooking_time');
             $table->string('calories');
             $table->decimal('protein', 8, 2);
             $table->decimal('carbs', 8, 2);
