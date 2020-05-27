@@ -11,6 +11,6 @@ class StepsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Step::class, 25)->create();
+        factory(App\Step::class, 200)->create();
     }
 }

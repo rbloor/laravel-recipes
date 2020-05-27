@@ -6,3 +6,13 @@
 
 @import "~uikit/dist/css/uikit.min.css";
 @import "cards";
+
+.step-number {
+    display: inline-block;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    box-sizing: border-box;
+}

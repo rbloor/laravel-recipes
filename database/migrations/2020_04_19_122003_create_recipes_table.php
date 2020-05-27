@@ -18,11 +18,16 @@ class CreateRecipesTable extends Migration
             $table->string('title');
             $table->text('description')->nullable();
             $table->integer('cooking_time');
-            $table->string('calories');
-            $table->decimal('protein', 8, 2);
-            $table->decimal('carbs', 8, 2);
-            $table->decimal('fat', 8, 2);
+            $table->integer('rating');
+            $table->integer('level');
             $table->string('image')->nullable();
+            $table->string('calories');
+            $table->decimal('fat', 8, 2);
+            $table->decimal('saturated_fat', 8, 2);
+            $table->decimal('carbs', 8, 2);
+            $table->decimal('sugar', 8, 2);
+            $table->decimal('protein', 8, 2);
+            $table->decimal('salt', 8, 2);
             $table->timestamps();
         });
     }

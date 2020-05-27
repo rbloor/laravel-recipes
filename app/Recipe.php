@@ -12,7 +12,19 @@ class Recipe extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'description', 'cooking_time', 'calories', 'protein', 'carbs', 'fat', 'image'
+        'title', 
+        'description', 
+        'cooking_time', 
+        'rating',
+        'level',
+        'image',
+        'calories',
+        'fat',
+        'saturated_fat',
+        'carbs',
+        'sugar',
+        'protein',
+        'salt'
     ];
 
     public function steps()
@@ -27,6 +39,6 @@ class Recipe extends Model
 
     public function ingredients()
     {
-        return $this->belongsToMany('App\Ingredient')->withPivot('unit', 'quantity', 'image')->withTimestamps();
+        return $this->belongsToMany('App\Ingredient')->withPivot('unit', 'quantity')->withTimestamps();
     }
 }

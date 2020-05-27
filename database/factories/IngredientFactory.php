@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Ingredient::class, function (Faker $faker) {
     return [
-        'title' => $faker->text(40),
+        'title' => $faker->text(10),
         'description' => $faker->text(200),
         'image' => $faker->numberBetween(1, 9)
     ];

@@ -3,7 +3,7 @@
     <div class="uk-container uk-container-expand">
         <div class="uk-grid uk-grid-medium uk-flex uk-flex-middle" data-uk-grid>
             <div class="uk-width-auto">
-                <a href="/" class="uk-logo" title=""><img src="img/logo.svg" alt=""></a>
+                <a href="/" class="uk-logo" title=""><img src="{{ asset('img/logo.svg') }}" alt=""></a>
             </div>
             <div class="uk-width-expand">
                 <form id="search-form" action="">
@@ -17,7 +17,7 @@
             <div class="uk-width-auto">
                 <ul class="uk-subnav" data-uk-margin>
                     <li class="uk-visible@s"><a href="/recipe">Recipe Book</a></li>
-                    <li class="uk-visible@s"><a href="/">Surprise me!</a></li>
+                    <li class="uk-visible@s"><a href="/recipe/random">Surprise me!</a></li>
                     <li class="uk-visible@s">
                         <a href="#" data-uk-icon="icon:calendar"></a>
                         <div class="drop-nav drop-comments uk-dropdown" data-uk-dropdown="mode: click; offset: 20;animation: uk-animation-slide-bottom-small; duration: 150">

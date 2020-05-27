@@ -16,7 +16,7 @@ class RecipesTableSeeder extends Seeder
                 Arr::random(App\Category::pluck('id')->toArray(), 2)
             );
 
-            $ingredientIDs = Arr::random(App\Ingredient::pluck('id')->toArray(), 5);
+            $ingredientIDs = Arr::random(App\Ingredient::pluck('id')->toArray(), 15);
             $units = ['gram', 'ml'];
             foreach($ingredientIDs as $ingredientID) {
                 $recipe->ingredients()->attach($ingredientID, ['unit' => Arr::random($units), 'quantity' => rand(1, 500)]);

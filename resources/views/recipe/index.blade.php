@@ -32,12 +32,12 @@
                         </div>
                         <div class="uk-card-media">
                             <div class="uk-inline-clip uk-transition-toggle" tabindex="0">
-                                <img class="lazy" data-src="https://picsum.photos/400/300/?random={{ $recipe->image }}" data-width="600" data-height="470" data-uk-img alt="" src="img/transp.gif">
+                                <img class="lazy" data-src="https://picsum.photos/400/200/?random={{ $recipe->image }}" data-width="400" data-height="200" data-uk-img alt="" src="img/transp.gif">
                             </div>
                         </div>
-                        <div class="uk-card-body">
-                            <h6 class="uk-margin-small-bottom uk-margin-remove-adjacent uk-text-bold">{{ $recipe->title }}</h6>
-                            <p class="uk-text-small uk-text-muted">{{ $recipe->description }}</p>
+                        <div class="uk-card-footer">
+                            <h6 class="uk-text-bold">{{ $recipe->title }}</h6>
+                            <!--<p class="uk-text-small uk-text-muted">{{ $recipe->description }}</p>-->
                         </div>
                         <div class="uk-card-footer">
                             <div class="uk-grid uk-grid-small uk-grid-divider uk-flex uk-flex-middle" data-uk-grid>
@@ -45,11 +45,9 @@
                                     <small>{{ $recipe->calories }} kcal</small>
                                 </div>
                                 <div class="uk-width-auto uk-text-right">
-                                    <span class="uk-icon" data-uk-icon="icon:star; ratio: 0.8"></span> 
-                                    <span class="uk-icon" data-uk-icon="icon:star; ratio: 0.8"></span> 
-                                    <span class="uk-icon" data-uk-icon="icon:star; ratio: 0.8"></span> 
-                                    <span class="uk-icon" data-uk-icon="icon:star; ratio: 0.8"></span> 
-                                    <span class="uk-icon" data-uk-icon="icon:star; ratio: 0.8"></span> 
+                                    @for ($i = 0; $i < $recipe->rating; $i++)
+                                        <span class="uk-icon" data-uk-icon="icon:star; ratio: 0.8"></span> 
+                                    @endfor 
                                 </div>
                             </div>
                         </div>

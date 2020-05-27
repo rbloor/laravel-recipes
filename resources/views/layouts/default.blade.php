@@ -23,7 +23,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body data-uk-filter="target: .js-filter">
+<body data-uk-filter="target: .js-filter" class="uk-background-muted">
     <div id="app">
         @include('particals.header')
         <div class="spacer"></div>

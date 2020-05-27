@@ -19,6 +19,7 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 
+Route::get('recipe/random', 'RecipeController@showRandom')->name('recipe.random');
 Route::resource('recipe', 'RecipeController')->only([
     'index', 'show'
 ]);

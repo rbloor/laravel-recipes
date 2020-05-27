@@ -29,7 +29,21 @@ class RecipeController extends Controller
      */
     public function show($id)
     {
-        return view('recipe.show', compact('id'));
+        $recipe = Recipe::findOrFail($id);
+        $recipe->image = 'hoisin-chicken-plum-stir-fry.jpg';
+        return view('recipe.show', compact('recipe'));
+    }
+
+    /**
+     * Display the a random resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function showRandom()
+    {
+        $recipe = Recipe::inRandomOrder()->limit(1)->first();
+        return redirect()->route('recipe.show', ['recipe' => $recipe->id]);
     }
 
 }
